@@ -59,13 +59,14 @@ namespace lab1
             }
             finally
             {
-                if (System.IO.File.Exists(file_name))
+                if (System.IO.File.Exists("H:\\" + file_name))
                 {
-                    student1.Load(file_name);
+                    student1.Load("H:\\" + file_name);
                 }
                 else
                 {
-                    System.IO.File.Create("D:\\" + file_name);
+                    var fs = System.IO.File.Create("H:\\" + file_name);
+                    fs.Dispose();
                 }
             }
 
